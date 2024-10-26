@@ -17,6 +17,21 @@ variable "common_tags" {
 variable "mysql_sg_tags" {
   default = {}
 }
+variable "backend_sg_tags" {
+  default = {
+
+  }
+}
+variable "bastion_sg_tags"{
+    default = {}
+}
+variable "frontend_sg_tags" {
+  default = {}
+}
+variable "ansible_sg_tags" {
+  default = {
+  }
+}
 
 variable "sg_name" {
   default = {
@@ -26,6 +41,6 @@ variable "sg_name" {
 variable "tags" {
 
 default = {
-    
+
 }
 }
