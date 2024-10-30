@@ -40,6 +40,7 @@ module "frontend" {
     Name = "${local.resource_name}-frontend"
   })
 }
+
 module "ansible" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   ami = data.aws_ami.joindevops.id
@@ -79,8 +80,15 @@ module "records" {
       name    = "frontend"
       type    = "A"
       ttl     = 1
+      records = [module.frontend.private_ip]
+    },
+    {
+      name    = ""
+      type    = "A"
+      ttl     = 1
       records = [module.frontend.public_ip]
     }
+
   ]
 
 }

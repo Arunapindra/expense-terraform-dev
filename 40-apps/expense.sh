@@ -1,6 +1,6 @@
 #!/bin/bash
 dnf install ansible -y
-cd /temp
+cd /tmp
 
 git clone https://github.com/Arunapindra/ansible-expense1.git
 cd ansible-expense1
